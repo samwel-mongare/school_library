@@ -34,7 +34,7 @@ cd school_library
 code .
 ```
 
-## Authors
+## Author
 
 👤 **Mongare S.**
 
