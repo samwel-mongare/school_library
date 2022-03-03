@@ -31,7 +31,7 @@ class Person
     private
 
     def is_of_age?
-        if age.to_i >= 18
+        if age >= 18
             return true
         else
             return false
