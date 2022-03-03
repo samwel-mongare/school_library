@@ -1,19 +1,40 @@
-![](https://img.shields.io/badge/Morse_decoder-blueviolet)
+# SCHOOL LIBRARY
 
-# My Enumerables
+> Imagine that you are the librarian of OOP University, and you need a tool to record what books are in the library and who borrows them. The app that you will create will allow a you to:  
+- Add new students or teachers. 
+- Add new books.
+- Save records of who borrowed a given book and when.
 
->  For this project, I have created a class MyList and a module MyEnumerable. My module MyEnumerable will implement a subset of the functionality of Enumerable.
+## Project screenshots
 
+![screenshot(COMING SOON)](./app_screenshot.png)
+
+Additional description about the project and its features.
 
 ## Built With
 
-- Ruby
+- RUBY
 
-👤 **Mithlesh**
+## How to Setup
 
-- GitHub: [@githubhandle](https://github.com/Mithi-code)
-- Twitter: [@twitterhandle](https://twitter.com/LazyMithlesh)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/mithicode)
+> You can simply clone or download [this repository](https://github.com/Mosams/school_library.git), and use your favorite browser or code editor to run this program.
+
+- To open the project after download, simply double click the index.html file
+
+- To open this project using vs code ( for this example) or your favorite code editor, you can follow the guide below:
+  > in your cmd or command line navigate to where this project is located, then;
+
+```cmd
+cd school_library
+```
+
+> thereafter run
+
+```cmd
+code .
+```
+
+## Authors
 
 👤 **Mongare S.**
 
@@ -25,7 +46,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Mosams/morse_code_decoder/issues).
+Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -33,9 +54,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse Team for facilitating project requirements and resources
 
 ## 📝 License
 
