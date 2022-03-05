@@ -34,6 +34,21 @@ cd school_library
 code .
 ```
 
+## How to Run the App through terminal
+
+- To run the application through trminal, make sure ruby and IRB is installed in your computer then follow the guide below:
+  > in your cmd or command line navigate to where this project is located, then;
+
+```cmd
+cd school_library
+```
+
+> thereafter run
+
+```cmd
+./main.rb
+```
+
 ## Author
 
 👤 **Mongare S.**
