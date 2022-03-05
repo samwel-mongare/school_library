@@ -77,7 +77,7 @@ class App
     title = one_line_prompt('Title: ')
     author = one_line_prompt('Author: ')
     @books.push(Book.new(title, author))
-    puts 'PERSON CREATED SUCCESSFULLY'.green
+    puts 'BOOK CREATED SUCCESSFULLY'.green
   end
 
   def create_rental
@@ -93,7 +93,7 @@ class App
 
     date = one_line_prompt('Date [YYYY/MM/DD]: ')
     @rentals.push(Rental.new(date, @people[person_index - 1], @books[book_index - 1]))
-    puts 'PERSON CREATED SUCCESSFULLY'.green
+    puts 'RENTAL CREATED SUCCESSFULLY'.yellow
   end
 
   def list_rentals
