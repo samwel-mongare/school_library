@@ -2,6 +2,8 @@ require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'classroom'
+require_relative 'rental'
+require_relative 'book'
 
 student_1 = Student.new(20, "classroom1", "Sam")
 student_2 = Student.new(18, "classroom1")
