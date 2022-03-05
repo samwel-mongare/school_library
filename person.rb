@@ -1,4 +1,5 @@
 require_relative 'corrector'
+require_relative 'rental'
 
 class Person
   attr_accessor :name, :age
@@ -11,6 +12,10 @@ class Person
     @name = name
     @parent_permission = parent_permission
     @corrector = Corrector.new
+  end
+
+  def add_rental(book, date)
+    Rental.new(date, book, self)
   end
 
   def can_use_services?
