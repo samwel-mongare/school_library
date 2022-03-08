@@ -1,10 +1,10 @@
 class PersonDisplay
-    include Instructions
-    attr_accessor :people
+  include Instructions
+  attr_accessor :people
 
-    def initialize
-      @people = []
-    end
+  def initialize
+    @people = []
+  end
 
   def create_person
     selection = one_line_prompt('Do you want to create a student (1) or a teacher (2)? [input the number]: ').to_i
@@ -31,10 +31,10 @@ class PersonDisplay
   end
 
   def list_people
-    if @people.length > 0
-  puts(@people.map { |p| "[#{p.class.name}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}" })
+    if @people.length.positive?
+      puts(@people.map { |p| "[#{p.class.name}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}" })
     else
-  puts "No library members yet!".red
+      puts 'No library members yet!'.red
     end
-end
+  end
 end
