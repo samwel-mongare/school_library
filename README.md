@@ -49,13 +49,20 @@ cd school_library
 ./main.rb
 ```
 
-## Author
+## Authors
 
 👤 **Mongare S.**
 
 - GitHub: [@githubhandle](https://github.com/Mosams/)
 - Twitter: [@twitterhandle](https://twitter.com/sam_mongare)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/sammy-mongare-b8288310b/)
+
+👤 **Amadu Kamara (Amkam)**
+
+- [GitHub](https://github.com/AmaduKamara)
+- [LinkedIn](https://www.linkedin.com/in/amadu-kamara-3b60a25b)
+- [Twitter](https://twitter.com/DevAmkam)
+- [Facebook](https://www.facebook.com/amadus.kamara.7)
 
 ## 🤝 Contributing
 
