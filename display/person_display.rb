@@ -1,5 +1,6 @@
 class PersonDisplay
     include Instructions
+    attr_accessor :people
 
     def initialize
       @people = []
