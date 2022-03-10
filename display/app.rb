@@ -1,6 +1,7 @@
 require_relative 'person_display'
 require_relative 'books_display'
 require_relative 'rentals_display'
+require 'pry'
 
 class App
   include Instructions
@@ -36,8 +37,19 @@ class App
     end
   end
 
+  def store_book
+    if File.exist?('./data/books.json')
+file = File.read('./data/books.json')
+data_hash = JSON.parse(file)
+    data_hash.map do |book|
+        Book.new(book['Title'], book['Author'])
+      end
+end
+end
+
   def run
     puts 'Welcome to OOP School Library'.bold
+    @book.load_books
     loop do
       input = main_prompt
       list_objects(input) if [1, 2, 6].include?(input)
