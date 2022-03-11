@@ -1,6 +1,7 @@
 require_relative 'person_display'
 require_relative 'books_display'
 require_relative 'rentals_display'
+require 'pry'
 
 class App
   include Instructions
@@ -36,8 +37,15 @@ class App
     end
   end
 
+  def store
+    @book.load_books
+    @person.load_people
+    @rental.load_rentals
+  end
+
   def run
     puts 'Welcome to OOP School Library'.bold
+    store
     loop do
       input = main_prompt
       list_objects(input) if [1, 2, 6].include?(input)

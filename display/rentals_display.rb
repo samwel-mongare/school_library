@@ -36,13 +36,31 @@ class RentalDisplay
 
     date = one_line_prompt('Date [YYYY/MM/DD]: ')
     @rentals.push(Rental.new(date, showpeople[person_index - 1], showbooks[book_index - 1]))
+    # binding.pry
+    f = File.new('./data/rentals.json', 'w')
+    jjn = @rentals.map do |r|
+      { Date: r.date, Book: r.book.title, Author: r.book.author, person_index: person_index - 1,
+        book_index: book_index - 1 }
+    end
+    f.puts(JSON.pretty_generate(jjn))
+    f.close
     puts 'RENTAL CREATED SUCCESSFULLY'.yellow
+  end
+
+  def load_rentals
+    return unless File.exist?('./data/rentals.json')
+
+    file = File.read('./data/rentals.json')
+    data_hash = JSON.parse(file)
+    data_hash.map do |rental|
+      @rentals.push(Rental.new(rental['Date'], showpeople[rental['person_index']], showbooks[rental['book_index']]))
+    end
   end
 
   def list_rentals
     id = one_line_prompt('ID of person: ').to_i
     person = showpeople.filter { |p| p.id == id }.first
     puts 'Rentals:'
-    puts(person.rentals.map { |r| "Date: #{r.date}, Book #{r.book.title} by #{r.book.author}" })
+    puts(person.rentals.map { |r| "Date: #{r.date}, Book #{r.book.title} by #{r.book.author}".yellow })
   end
 end

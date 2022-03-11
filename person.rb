@@ -5,14 +5,21 @@ class Person
 
   attr_reader :id, :rentals
 
+  # rubocop:disable Style/ClassVars
+
+  @@id = 1
+
   def initialize(age, name = 'Unknown', parent_permission: true)
-    @id = Random.rand(1..1000)
+    @id = @@id
+    @@id += 1
     @age = age
     @name = name
     @parent_permission = parent_permission
     @corrector = Corrector.new
     @rentals = []
   end
+
+  # rubocop:enable Style/ClassVars
 
   def can_use_services?
     if of_age? || @parent_permission

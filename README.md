@@ -15,6 +15,11 @@ Additional description about the project and its features.
 
 - RUBY
 
+## Gems Used
+
+- Rubocop
+- Colorize
+
 ## How to Setup
 
 > You can simply clone or download [this repository](https://github.com/Mosams/school_library.git), and use your favorite browser or code editor to run this program.
@@ -41,6 +46,16 @@ code .
 
 ```cmd
 cd school_library
+```
+
+## Install Gems
+
+
+```cmd
+bundle install
+```
+```cmd
+gem install colorize
 ```
 
 > thereafter run
