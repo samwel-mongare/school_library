@@ -47,6 +47,16 @@ class RentalDisplay
     puts 'RENTAL CREATED SUCCESSFULLY'.yellow
   end
 
+  def load_rentals
+    return unless File.exist?('./data/rentals.json')
+
+    file = File.read('./data/rentals.json')
+    data_hash = JSON.parse(file)
+    data_hash.map do |rental|
+      @rentals.push(Rental.new(rental['Date'], showpeople[rental['person_index']], showbooks[rental['book_index']]))
+    end
+  end
+
   def list_rentals
     id = one_line_prompt('ID of person: ').to_i
     person = showpeople.filter { |p| p.id == id }.first
