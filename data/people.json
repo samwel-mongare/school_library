@@ -1,1 +1,21 @@
-[{"className":"Student","Name":"Saw","ID":1000,"Age":21}]
+[
+  {
+    "className": "Student",
+    "Name": "Amadu Kamara",
+    "ID": 1,
+    "Age": 21
+  },
+  {
+    "className": "Teacher",
+    "Name": "Charles Chimwemwe",
+    "ID": 2,
+    "Age": 31,
+    "specialization": "Tutor"
+  },
+  {
+    "className": "Student",
+    "Name": "Sam Mongare",
+    "ID": 3,
+    "Age": 24
+  }
+]

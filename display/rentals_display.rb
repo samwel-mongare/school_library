@@ -36,6 +36,14 @@ class RentalDisplay
 
     date = one_line_prompt('Date [YYYY/MM/DD]: ')
     @rentals.push(Rental.new(date, showpeople[person_index - 1], showbooks[book_index - 1]))
+    # binding.pry
+    f = File.new('./data/rentals.json', 'w')
+    jjn = @rentals.map do |r|
+      { Date: r.date, Book: r.book.title, Author: r.book.author, person_index: person_index - 1,
+        book_index: book_index - 1 }
+    end
+    f.puts(JSON.pretty_generate(jjn))
+    f.close
     puts 'RENTAL CREATED SUCCESSFULLY'.yellow
   end
 
@@ -43,47 +51,6 @@ class RentalDisplay
     id = one_line_prompt('ID of person: ').to_i
     person = showpeople.filter { |p| p.id == id }.first
     puts 'Rentals:'
-    puts(person.rentals.map { |r| "Date: #{r.date}, Book #{r.book.title} by #{r.book.author}" })
+    puts(person.rentals.map { |r| "Date: #{r.date}, Book #{r.book.title} by #{r.book.author}".yellow })
   end
-
-  # def save_people
-  #   f = File.new("./data/rentals.json", "w")
-  #   jjn = @rentals.map { |p| }
-  #   f.puts(jjn.to_json)
-  #   f.close
-  # end
-
-  # def person_details
-  #   if File.exist?('./data/people.json')
-  #     file = File.read('./data/people.json')
-  #     data_hash = JSON.parse(file)
-  #     data_hash.each_with_index { |n, i|
-  #       print "[#{i}] ".green
-  #       n.each do |key, value|
-  #         if key != "className"
-  #       print "#{key}: "
-  #       print "#{value} ".yellow    
-  #         end
-  #   end
-  #   puts " "
-  # } else
-  #       puts 'No members added yet!'.red
-  #     end
-  # end
-
-  # def book_details
-  #   if File.exist?('./data/books.json')
-  #     file = File.read('./data/books.json')
-  #     data_hash = JSON.parse(file)
-  #     data_hash.each_with_index { |n, i|
-  #       print "#{i + 1} ".green
-  #       n.each do |key, value|
-  #       print "#{key}: "
-  #       print "#{value} ".yellow
-  #   end
-  #   puts " "
-  # } else
-  #       puts 'No books added yet!'.red
-  #     end
-  # end
 end

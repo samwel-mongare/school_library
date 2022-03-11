@@ -32,34 +32,25 @@ class PersonDisplay
     end
   end
 
-  def list_people
-      if File.exist?('./data/people.json')
-        file = File.read('./data/people.json')
-        data_hash = JSON.parse(file)
-        data_hash.each_with_index { |n, i|
-          n.each do |key, value|
-            if key != "className"
-          print "#{key}: "
-          print "#{value} ".yellow
-            else
-          print "[#{value}] ".green
-            end
+  def load_people
+    return unless File.exist?('./data/people.json')
+
+    file = File.read('./data/people.json')
+    data_hash = JSON.parse(file)
+    data_hash.map do |person|
+      if person['className'] == 'Student'
+        @people.push(Student.new(person['Age'], person['Name']))
+      else
+        @people.push(Teacher.new(person['Age'], person['specialization'], person['Name']))
       end
-      puts " "
-    } else
-          puts 'No members added yet!'.red
-        end
+    end
   end
 
-  def save_people
-    f = File.new("./data/people.json", "w")
-    jjn = @people.map { |p| 
-      if p.class.name == "Student"
-        {className: p.class.name, Name: p.name, ID: p.id, Age: p.age }
-      else
-        {className: p.class.name, Name: p.name, ID: p.id, Age: p.age }
-      end}
-    f.puts(jjn.to_json)
-    f.close
+  def list_people
+    if @people.length.positive?
+      puts(@people.map { |p| "[#{p.class.name}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}".yellow })
+    else
+      puts 'No library members yet!'.red
+    end
   end
 end
