@@ -37,6 +37,12 @@ class App
     end
   end
 
+  def store
+    @book.load_books
+    @person.load_people
+    @rental.load_rentals
+  end
+
   def run
     puts 'Welcome to OOP School Library'.bold
     store
