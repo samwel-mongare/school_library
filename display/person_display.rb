@@ -46,6 +46,19 @@ class PersonDisplay
     end
   end
 
+  def save_people
+    f = File.new('./data/people.json', 'w')
+    jjn = @people.map do |p|
+      if p.instance_of?(Student)
+        { className: p.class.name, Name: p.name, ID: p.id, Age: p.age }
+      else
+        { className: p.class.name, Name: p.name, ID: p.id, Age: p.age, specialization: p.specialization }
+      end
+    end
+    f.puts(JSON.pretty_generate(jjn))
+    f.close
+  end
+
   def list_people
     if @people.length.positive?
       puts(@people.map { |p| "[#{p.class.name}] Name: #{p.name}, ID: #{p.id}, Age: #{p.age}".yellow })
